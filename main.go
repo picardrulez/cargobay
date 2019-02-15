@@ -7,12 +7,19 @@ import (
 	"net/http"
 )
 
+var VERSION = "v1.1"
+
 func main() {
 
 	//Handle user flags and set defaults
 	port := flag.String("p", "8000", "port to listen on")
 	targetDir := flag.String("d", "/tmp", "target directory to serve")
+	versionFlag := flag.Bool("v", false, "display version")
 	flag.Parse()
+	if *versionFlag {
+		fmt.Println("cargobay " + VERSION)
+		return
+	}
 
 	//setup http handlers
 	r := mux.NewRouter()
