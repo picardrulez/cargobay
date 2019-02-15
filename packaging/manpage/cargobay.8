@@ -1,0 +1,20 @@
+.TH cargobay 8 "02/15/2019" "version 1.1" "cargobay manpage"
+.SH NAME
+cargobay - run a temporary file server over http
+.SH SYNOPSIS
+.B cargobay
+.RI "[" OPTIONS "]"
+.SH DESCRIPTION
+.B cargobay
+is a golang application used to create a temporary file server sharing over the http protocol.  The command run with no options will serve on port 8000 and from the /tmp directory by default.
+.SH OPTIONS
+.TP
+.B -p
+Specifies which port cargobay should listen to.
+.TP
+.B -d
+Specifies which directory should be served.
+.SH AUTHOR
+Geoff Scott (picardrulez@gmail.com)
+.SH COPYRIGHT
+gpl v3.0
