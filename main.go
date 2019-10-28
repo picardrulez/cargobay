@@ -42,7 +42,7 @@ func rootHandler(w http.ResponseWriter, r *http.Request) {
 func loggingMiddleware(next http.Handler) http.Handler {
     return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
         //log each request
-        log.Println(r.Method, r.URL, r.Host)
+        log.Println(r.RemoteAddr, r.Method, r.URL, r.Host)
         next.ServeHTTP(w, r)
     })
 }
